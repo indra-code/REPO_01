@@ -1,0 +1,35 @@
+A super class reference variale can refer to any of its sub class object. But it can only call superclass's inherited methods, but not subclass own methods.
+If the subclass overrides its superclass method, this reference calls that method, the sub class version is executed.
+The cause for difference in the behaviour of the method call statement is, the instance or object the reference is referring to. And objects are created at runtime, a link is established between method call and definition at runtime. So it is called dynamic linking or dynamic binding The change in the behaviour is known as polymorphism.
+
+Abstract class: Class definition qualified with "abstract" keyword, which can't have instances. The purpose of it is forcing the developer to define subclasses needed to the business and use them.
+
+Abstract method: 
+Method of a class don't have a body
+The class(which have abstract method) is mandatorily abstract class, which don't allow instatiation. And forces the dev to define subclass and override super class's abstract method
+
+Exception hierarchy:
+=============================================================================
+Entity makes class object be saved into database table.
+@Entity
+public class Product {
+    int id;
+    String name;
+    String manufacturer;
+
+Table = Product
+Columns = id,name,manufacturer
+
+=============================================================================================================
+
+Base URL: https://localhost:8080
+
+Endpoint	Function	Request 			Response			Service Method
+employees	GET		Not Applicable			All Employees			findAll
+employees/101	GET		Not Applicable			Employee with 101 id		findById
+employees	POST		JSON of Employee object		JSON of Employee object		saveEmployee
+employees/101	PUT		JSON of Employee object		JSON of Employee object		editEmployee
+employees/101	DELETE		Not Mandatory			Employee with 101 id		deleteEmployee
+
+prompt: generate a method findById for the url products/{id} to return an object of product if it is available in the repository. Make sure the path variable is of type integer.
+
